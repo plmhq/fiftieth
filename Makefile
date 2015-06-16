@@ -4,6 +4,6 @@ install:
 	neat install --path 
 
 watch:
-	sass -r sass-globbing --watch styles/main.scss:dist/style.css
+	sass --watch styles/main.scss:dist/style.css
 
 .PHONY: watch
