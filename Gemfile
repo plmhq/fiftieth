@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-gem 'sass'
-gem 'sass-globbing'
-gem 'bourbon'
-gem 'neat'
+
+group :development do
+  gem 'sass'
+  gem 'neat'
+  gem 'bourbon'
+end
