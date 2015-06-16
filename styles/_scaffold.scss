@@ -6,4 +6,10 @@ body {
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-computed;
+
+  // for the footer
+  // currently, the footer's (max) height is 100vh.
+  // there seems to be an issue with $footer-size not
+  // existing yet (this file was imported before the footer)
+  padding-bottom: 100vh;
 }

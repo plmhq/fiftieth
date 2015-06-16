@@ -2,6 +2,7 @@ $handle-padding: 20px;
 $handle-content-margin: 5px;
 $handle-content-margin-large: 50px;
 $handle-size: 500px;
+$handle-zIndex: 1;
 
 .handle {
   position: relative;
@@ -9,6 +10,7 @@ $handle-size: 500px;
   padding-bottom: $handle-padding;
   height: 100vh;
   background: #000;
+  z-index: $handle-zIndex; // for the sake of footer
 
   @include media($screen) {
     background-repeat: no-repeat;

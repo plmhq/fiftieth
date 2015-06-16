@@ -1,10 +1,18 @@
 $footer-padding: 20px;
 
 .footer {
+  // check _scaffold (body)
+  // The body element has a padding bottom
+  // for this specific swag.
+  position: fixed;
+  top: 0;
+  left: 0;
   padding-top: $footer-padding;
   padding-bottom: $footer-padding;
   height: 100vh;
+  width: 100%; // need to specify because of the fixed position
   background: #ddd;
+  z-index: ($handle-zIndex - 1); // $handle-zIndex == 1
 
   /**
    * Vertically center
