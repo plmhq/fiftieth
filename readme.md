@@ -6,7 +6,7 @@
 ### Requirements
 
 - Node / npm / bower
-- Ruby / RubyGems
+- [Ruby](https://www.ruby-lang.org/en/) / [RubyGems](https://rubygems.org/) / [Bundler](https://bundler.io)
 
 ### Setup
 
