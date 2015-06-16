@@ -1,0 +1,15 @@
+@mixin g-container($local-padding: $grid-gutter-width) {
+  padding-left: $local-padding;
+  padding-right: $local-padding;
+  @include outer-container(100%);
+
+  @include media($tablet) {
+    width: $screen-sm-min;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include media($screen) {
+    width: $screen-md-min;
+  }
+}

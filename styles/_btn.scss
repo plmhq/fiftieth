@@ -1,0 +1,130 @@
+/*
+ * .btn component
+ * inverse - border out / background in
+ * normal - border in / background out
+ */
+@mixin btn($local-inverse: false, $local-child: ".__caret", $local-animate: false) {
+  display: inline-block;
+  width: auto;
+  font-family: $font-family-base;
+  color: $gray;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: $padding-base-vertical $padding-base-horizontal;
+
+  // Reset unusual Firefox-on-Android default style;
+  // see https//github.com/necolas/normalize.css/issues/214
+  background-image: none;
+  border-radius: $border-radius-base;
+  transition: all $transition-base;
+
+  &:hover {
+    text-decoration: none;
+    color: $gray--dark;
+  }
+
+  @if $local-inverse == false {
+    background-color: transparent;
+    border: 1px solid $gray;
+
+    &:hover { border-color: $gray--dark; }
+  } @else {
+    background-color: $gray;
+    border: 0;
+  }
+
+  /*
+   *  Implement caret / icon (whatever)
+   */
+  #{$local-child} { margin-left: 10px; }
+
+  &:hover {
+    @if $local-animate != false {
+      #{$local-child} {
+        @keyframes btn__caret {
+          0% { transform: translateX(0px); }
+          40% { transform: translateX(5px); }
+          100% { transform: translateX(0px); }
+        }
+
+        @include animation-name(btn__caret);
+        @include animation-duration(0.75s);
+        @include animation-timing-function(cubic-bezier(0.22, 0.61, 0.36, 1));
+        @include animation-iteration-count(infinite);
+      }
+    }
+  }
+}
+
+/*
+ * Create color-variant btn
+ */
+@mixin btn--variant($local-brand: gray, $local-inverse: false, $local-gradient: false) {
+  // Assign variant accordingly.
+  $local-brand-name: gray;
+  @if $local-brand == default {
+    $local-brand-name: $brand-default;
+  } @else if $local-brand == primary {
+    $local-brand-name: $brand-primary;
+  } @else if $local-brand == success {
+    $local-brand-name: $brand-success;
+  } @else if $local-brand == info {
+    $local-brand-name: $brand-info;
+  } @else if $local-brand == warning {
+    $local-brand-name: $brand-warning;
+  } @else if $local-brand == danger {
+    $local-brand-name: $brand-danger;
+  }
+
+  @if $local-inverse == false {
+    color: $local-brand-name;
+    border-color: $local-brand-name;
+    &:hover {
+      color: darken($local-brand-name, $brand__base-dark);
+      border-color: darken($local-brand-name, $brand__base-dark);
+    }
+  } @else {
+    @if $local-brand == default {
+      &, &:hover { color: $gray--dark; }
+    } @else {
+      &, &:hover { color: #fff; }
+    }
+
+    @if $local-brand == primary and $local-gradient == true {
+      background: $brand-primary__gradient;
+      &:hover { background: $brand-primary__gradient--dark; }
+    } @else {
+      background-color: $local-brand-name;
+      &:hover { background-color: darken($local-brand-name, $brand__base-dark); }
+    }
+  }
+}
+
+// Size variants
+@mixin btn--size($size) {
+  @if $size == sm {
+    padding: $padding-small-vertical $padding-small-horizontal;
+  } @else if $size == lg {
+    padding: $padding-large-vertical $padding-large-horizontal;
+  }
+}
+
+// Block button
+@mixin btn--block() {
+  display: block;
+  width: 100%;
+}
+
+// Roundness
+@mixin btn--roundness($local-roundness: $border-radius-base) {
+  // Identify the roundness
+  $roundness: null;
+  @if $local-roundness == round {
+    $roundness: $border-radius-rounded;
+  } @else if $local-roundness == square {
+    $roundness: 0;
+  }
+
+  border-radius: $roundness;
+}
