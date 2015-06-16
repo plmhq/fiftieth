@@ -4,6 +4,7 @@ $handle-content-margin-large: 50px;
 $handle-size: 500px;
 
 .handle {
+  position: relative;
   padding-top: $handle-padding;
   padding-bottom: $handle-padding;
   height: 100vh;
