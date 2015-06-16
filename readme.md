@@ -13,7 +13,8 @@
 Just dish this script and you should be good to go!
 
 ```
-gem install
+make install
+make # watches the css files
 open index.html
 ```
 
