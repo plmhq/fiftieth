@@ -1,13 +1,64 @@
+$home-padding: 20px;
+$home-margin: 25px;
+$home-logo-size: 64px;
+$home-logo-size-screen: 100px;
+
 .home {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  position: relative;
+  padding-top: $home-padding;
+  padding-bottom: $home-padding;
   height: 100vh;
   background: #ddd;
+  z-index: $handle-zIndex; // footer
 
   /**
    * Vertically center
    */
   .outer-container { @include table-center; }
   .outer-container > .inner-container { @include table-center-inner; }
-  .container { @include g-container; } // Grid container
+
+  .container {
+    @include g-container;
+    text-align: center;
+  } // Grid container
+
+  .title {
+    @extend .h1;
+    @extend .h-inverse;
+  }
+
+  .logo {
+    display: bloock;
+    width: $home-logo-size;
+    height: $home-logo-size;
+    margin-bottom: $home-margin;
+
+    @include media($screen) {
+      margin-bottom: ($home-margin * 2);
+      width: $home-logo-size-screen;
+      height: $home-logo-size-screen;
+    }
+  }
+
+  .sub-title {
+    @extend .h2;
+    font-style: italic;
+  }
+
+  .sub-title:after {
+    content: "";
+    display: block;
+    margin-top: $home-margin;
+    margin-bottom: $home-margin;
+    margin-left:auto;
+    margin-right: auto;
+    height: 2px;
+    width: ($home-margin * 2);
+    background: $brand-success;
+
+    @include media($screen) {
+      margin-top: ($home-margin * 2);
+      margin-bottom: ($home-margin * 2);
+    }
+  }
 }
