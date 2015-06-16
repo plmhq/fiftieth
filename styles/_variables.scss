@@ -28,13 +28,10 @@ $gray--lighter: lighten($gray-base, 93.5%);
 
 $brands: default, primary, success, info, warning, danger;
 $brand-default: #fff;
-$brand-primary: #7342ae;
-$brand-primary--sub: #d22cd9; // For gradient
-$brand-primary__gradient: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
-$brand-primary__gradient--dark: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark));
+$brand-primary: #faee4b; // gold
 $brand-success: #5cb85c;
 $brand-info: #28affa;
-$brand-warning: #f0ad4e;
+$brand-warning: $brand-primary;
 $brand-danger: #d9534f;
 
 /*
@@ -49,7 +46,7 @@ $link-decoration: underline;
 /*
  * III. Typography
  */
-$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-base: $font-family-sans-serif;
 
@@ -64,11 +61,12 @@ $font-size-h4: $font-size-large;
 $font-size-h5: $font-size-base;
 $font-size-h6: $font-size-small;
 // $font-size-h6: ceil($font-size-base * 0.85); // ~12px
+
 // Line height
 $line-height-base: 1.428571429; // <: 20/14
 $line-height-computed: floor($font-size-base * $line-height-base); // ~20
 
-$headings-font-family: "Bitter", $font-family-serif;
+$headings-font-family: $font-family-serif;
 $headings-line-height: 1.1;
 
 /*

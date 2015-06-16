@@ -91,13 +91,9 @@
       &, &:hover { color: #fff; }
     }
 
-    @if $local-brand == primary and $local-gradient == true {
-      background: $brand-primary__gradient;
-      &:hover { background: $brand-primary__gradient--dark; }
-    } @else {
-      background-color: $local-brand-name;
-      &:hover { background-color: darken($local-brand-name, $brand__base-dark); }
-    }
+
+    background-color: $local-brand-name;
+    &:hover { background-color: darken($local-brand-name, $brand__base-dark); }
   }
 }
 
@@ -114,17 +110,4 @@
 @mixin btn--block() {
   display: block;
   width: 100%;
-}
-
-// Roundness
-@mixin btn--roundness($local-roundness: $border-radius-base) {
-  // Identify the roundness
-  $roundness: null;
-  @if $local-roundness == round {
-    $roundness: $border-radius-rounded;
-  } @else if $local-roundness == square {
-    $roundness: 0;
-  }
-
-  border-radius: $roundness;
 }

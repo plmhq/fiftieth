@@ -13,6 +13,11 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
 }
 
+// This defies our convention, but there doesn't seem
+// to be any good way to replace the font-fucking-family.
+// Remember, our headings are @extended.
+.h-inverse { font-family: $font-family-base; }
+
 h1, .h1 { font-size: $font-size-h1; }
 h2, .h2 { font-size: $font-size-h2; }
 h3, .h3 { font-size: $font-size-h3; }

@@ -1,0 +1,25 @@
+/**
+ * An element represented as a table. This is
+ * used to vertically center content.
+ */
+@mixin table-center() {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+@mixin table-center-inner() {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/**
+ * Removes ul/li default style.
+ * Useful for elements that use list.
+ */
+@mixin remove-list-defaults() {
+  margin: 0 auto;
+  padding-left: 0;
+  width: auto;
+
+  > li { list-style: none; }
+}
