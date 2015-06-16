@@ -1,14 +1,13 @@
 .home {
   padding-top: 20px;
   padding-bottom: 20px;
-  min-height: 100vh;
+  height: 100vh;
   background: #ddd;
 
   /**
    * Vertically center
    */
-  .outer-container { }
-  .outer-container > .inner-container { }
-  // Grid container
-  .container { @include g-container; }
+  .outer-container { @include table-center; }
+  .outer-container > .inner-container { @include table-center-inner; }
+  .container { @include g-container; } // Grid container
 }
