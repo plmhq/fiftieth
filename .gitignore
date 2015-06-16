@@ -1,4 +1,6 @@
 /.sass-cache
 Gemfile.lock
+styles/bourbon/
+styles/neat/
 /dist/style.css
 /dist/style.css.map
