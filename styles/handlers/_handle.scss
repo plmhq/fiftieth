@@ -1,5 +1,7 @@
 $handle-padding: 20px;
-$handle-content-margin: 10px;
+$handle-content-margin: 5px;
+$handle-content-margin-large: 50px;
+$handle-size: 500px;
 
 .handle {
   padding-top: $handle-padding;
@@ -7,21 +9,25 @@ $handle-content-margin: 10px;
   height: 100vh;
   background: #000;
 
+  @include media($screen) {
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
   /**
    * Vertically center
    */
   .outer-container { @include table-center; }
   .outer-container > .inner-container { @include table-center-inner; }
-  // Grid container
-  .container { @include g-container; }
+  .container { @include g-container; } // Grid container
 
   .content {
     color: #fff;
     text-align: center;
-    @include media($screen) { width: 500px; }
+    margin-bottom: $handle-content-margin-large;
+    @include media($screen) { width: $handle-size; }
   }
-
-  .content > .heading { margin-bottom: 50px; }
+  .content > .heading { margin-bottom: $handle-content-margin-large; }
   .content > .heading.-right {
     margin-left: auto;
     margin-right: 0;
@@ -30,18 +36,16 @@ $handle-content-margin: 10px;
     margin-left: auto;
     margin-right: auto;
   }
-
   .content > .heading > .title {
     @extend .h1;
     margin-top: 0;
-    margin-bottom: ($handle-content-margin / 2);
+    margin-bottom: $handle-content-margin;
   }
-
   .content > .heading > .sub-title {
     @extend .h1;
     @extend .h-inverse;
     margin-top: 0;
-    margin-bottom: $handle-content-margin;
+    margin-bottom: ($handle-content-margin * 4);
   }
   .content > .heading > .sub-title > .receipt {
     @extend .h3;
@@ -49,8 +53,6 @@ $handle-content-margin: 10px;
     margin-right: $handle-content-margin;
     font-style: italic;
   }
-
   .content > .heading > .date { @extend .h5; }
-
-  .content > .body { margin-top: 50px; }
+  .content > .body { margin: 0; }
 }
