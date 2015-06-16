@@ -1,0 +1,14 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 100vh;
+  background: #ddd;
+
+  /**
+   * Vertically center
+   */
+  .outer-container { }
+  .outer-container > .inner-container { }
+  // Grid container
+  .container { @include g-container; }
+}

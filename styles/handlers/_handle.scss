@@ -1,0 +1,23 @@
+.handle {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 100vh;
+  background: #ddd;
+
+  .-jumbtron {
+
+  }
+
+  /**
+   * Vertically center
+   */
+  .outer-container { }
+  .outer-container > .inner-container { }
+  // Grid container
+  .container { @include g-container; }
+
+  .heading > .title { @extend .h1; }
+  .heading > .sub-title { @extend .h1; }
+  .heading > .date { @extend .h5; }
+  .body { @extend .h2; }
+}
